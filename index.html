@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=Main.dc.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="1; url=Main.dc.html">
 <title>OnlineHabibi</title>
-<script>location.replace('Main.dc.html' + location.hash);</script>
+<script>
+(function () {
+  var mobile = false;
+  try { mobile = window.matchMedia('(max-width: 767px)').matches; } catch (e) {}
+  location.replace((mobile ? 'MobileHome.dc.html' : 'Main.dc.html') + location.hash);
+})();
+</script>
 </head>
 <body>
 <p>Redirecting to <a href="Main.dc.html">OnlineHabibi</a>&hellip;</p>
